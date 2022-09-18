@@ -28,17 +28,16 @@ namespace UnitTest
             var authenticate = new Authentication(Context);
             var tokenService = new TokenService();
 
-            // var config = new Configuration;
-
-            //var options = new Mock<IOptions<Configuration>>();
-            //options.Setup(x => x.Value).Returns(config);
-
             IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
             // Duplicate here any configuration sources you use.
             configurationBuilder.AddJsonFile("AppSettings.json");
             IConfiguration configuration = configurationBuilder.Build();
 
-            var obj = new AuthenticationController(Context, authenticate, tokenService);
+            var obj = new AuthenticationController(configuration, Context, tokenService, authenticate);
+            var request = new UserRegistration();
+            var result = obj.Authenticate(request);
+            Assert.IsNotNull(result);
+            Assert.IsTrue(string.IsNullOrEmpty(result.Value));
         }
 
     }

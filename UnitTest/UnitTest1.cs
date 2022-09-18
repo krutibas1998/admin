@@ -3,9 +3,11 @@ using admin.DatabaseEntity;
 using admin.Servises;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System.Configuration;
+using TokenBaseAuth.Controllers;
 using TokenBaseAuth.DatabaseEntity;
 using TokenBaseAuth.Services;
 using healthcareContext = admin.DatabaseEntity.healthcareContext;
@@ -103,18 +105,29 @@ namespace UnitTest
             Assert.IsTrue(string.IsNullOrEmpty(result.Value));
         }
 
-        //[TestMethod]
+        [TestMethod]
 
-        //public void Authenticate_Test()
-        //{
-        //    var connectionstring = "Data Source=CTSDOTNET673;Initial Catalog=healthcare;User ID=sa;Password=pass@word1";
-        //    var optionsBuilder = new DbContextOptionsBuilder<healthcareContext>();
-        //    optionsBuilder.UseSqlServer(connectionstring);
-        //    var Context = new healthcareContext(optionsBuilder.Options);
-        //    var authenticate = new Authentication(Context);
-        //    var tokenService = new TokenService();
-        //    var obj = new AuthenticationController(Context, authenticate, tokenService);
-        //}
+        public void Authenticate_Test()
+        {
+            var connectionstring = "Data Source=CTSDOTNET673;Initial Catalog=healthcare;User ID=sa;Password=pass@word1";
+            var optionsBuilder = new DbContextOptionsBuilder<TokenBaseAuth.DatabaseEntity.healthcareContext>();
+            optionsBuilder.UseSqlServer(connectionstring);
+            var Context = new TokenBaseAuth.DatabaseEntity.healthcareContext(optionsBuilder.Options);
+            var authenticate = new Authentication(Context);
+            var tokenService = new TokenService();
+
+            IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            // Duplicate here any configuration sources you use.
+            configurationBuilder.AddJsonFile("AppSettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
+
+            var obj = new AuthenticationController(configuration, Context, tokenService, authenticate);
+            var request = new TokenBaseAuth.DatabaseEntity.UserRegistration();
+            var result = obj.Authenticate(request);
+            Assert.IsNotNull(result);
+            Assert.IsTrue(string.IsNullOrEmpty(result.Value));
+        }
+
 
 
 

@@ -15,7 +15,7 @@ namespace TokenBaseAuth.Controllers
 
         public readonly ITokenService _tokenService;
 
-        private readonly IConfiguration _configuration;
+        public readonly IConfiguration _configuration;
 
         public readonly IAuthentication _authenticate;
 
@@ -55,7 +55,7 @@ namespace TokenBaseAuth.Controllers
             }
             else
             {
-                return BadRequest("Invalid Credentials");
+                return Ok(new {Token = "Invalid Credentials" });
             }
         }
     }

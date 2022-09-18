@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "admin", "admin\admin.csproj", "{EE9EF321-817A-4ED3-8B1B-944460A188A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "admin", "admin\admin.csproj", "{EE9EF321-817A-4ED3-8B1B-944460A188A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenBaseAuth", "TokenBaseAuth\TokenBaseAuth.csproj", "{01F2C410-741E-4498-89D4-60E946FD722C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenBaseAuth", "TokenBaseAuth\TokenBaseAuth.csproj", "{01F2C410-741E-4498-89D4-60E946FD722C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{FCF289EF-EE57-45FE-B604-142041D24068}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetwayApi", "GetwayApi\GetwayApi.csproj", "{D9B98D62-EB16-4778-8BA0-B3B4445708CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{01F2C410-741E-4498-89D4-60E946FD722C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01F2C410-741E-4498-89D4-60E946FD722C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01F2C410-741E-4498-89D4-60E946FD722C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF289EF-EE57-45FE-B604-142041D24068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF289EF-EE57-45FE-B604-142041D24068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF289EF-EE57-45FE-B604-142041D24068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF289EF-EE57-45FE-B604-142041D24068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B98D62-EB16-4778-8BA0-B3B4445708CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B98D62-EB16-4778-8BA0-B3B4445708CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B98D62-EB16-4778-8BA0-B3B4445708CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B98D62-EB16-4778-8BA0-B3B4445708CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

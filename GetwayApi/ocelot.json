@@ -1,0 +1,99 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Authentication",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5100"
+        }
+      ],
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Admin",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "GET",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5234"
+        }
+      ],
+      "UpstreamPathTemplate": "/members",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Admin/insertUser",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5234"
+        }
+      ],
+      "UpstreamPathTemplate": "/insertusers",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Admin/SearchUser",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5234"
+        }
+      ],
+      "UpstreamPathTemplate": "/searchmembers",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Admin/insertClaim",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5234"
+        }
+      ],
+      "UpstreamPathTemplate": "/insertclaim",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/userRegistration/insertUser",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5234"
+        }
+      ],
+      "UpstreamPathTemplate": "/signup",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ]
+}

@@ -7,10 +7,6 @@ namespace admin.DatabaseEntity
 {
     public partial class healthcareContext : DbContext
     {
-        public healthcareContext()
-        {
-        }
-
         public healthcareContext(DbContextOptions<healthcareContext> options)
             : base(options)
         {

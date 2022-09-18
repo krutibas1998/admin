@@ -44,12 +44,13 @@ namespace admin.Servises
         public object SearchUser(User user)
         {
 
-          var item = _healthcareContext.Users.ToList().Where(x => (x.UserId == user.UserId)||x.FirstName==user.FirstName).ToList();
+            var item = _healthcareContext.Users.ToList().Where(x => (x.UserId == user.UserId) || x.FirstName == user.FirstName).ToList();
             var result = from u in _healthcareContext.Users
                          join c in _healthcareContext.Claims
                          on
-                         u.UserId equals c.ClaimId into ts from t in ts.DefaultIfEmpty()
-                         where u.UserId == user.UserId  
+                         u.UserId equals c.ClaimId into ts
+                         from t in ts.DefaultIfEmpty()
+                         where u.UserId == user.UserId
                          select new
                          {
                              memberId = u.UserId,
@@ -64,7 +65,7 @@ namespace admin.Servises
 
         }
 
-        
+
 
 
     }

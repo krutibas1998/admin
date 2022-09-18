@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace admin.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    
     public class AdminController : ControllerBase
     {
         private readonly healthcareContext dBContext;
@@ -51,6 +52,7 @@ namespace admin.Controllers
             {
                 return new List<User>();
             }
+
         }
 
         [HttpPost("insertClaim")]
